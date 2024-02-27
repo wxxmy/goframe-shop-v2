@@ -30,6 +30,9 @@ var (
 			if err != nil {
 				return err
 			}
+			s.BindHandler("/hello", func(req *ghttp.Request) {
+				req.Response.Writeln("你好啊！")
+			})
 			//管理后台路由组
 			s.Group("/backend", func(group *ghttp.RouterGroup) {
 				group.Middleware(
