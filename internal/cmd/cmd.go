@@ -44,6 +44,7 @@ var (
 				group.Bind(
 					controller.Admin.Create, // 管理员
 					controller.Login,        // 登录
+					controller.Goods,        //商品管理
 				)
 				//需要登录的路由组绑定
 				group.Group("/", func(group *ghttp.RouterGroup) {
@@ -66,7 +67,7 @@ var (
 						controller.Category,     //商品分类管理
 						controller.Coupon,       //商品优惠券管理
 						controller.UserCoupon,   //商品优惠券管理
-						controller.Goods,        //商品管理
+						//controller.Goods,        //商品管理
 						controller.GoodsOptions, //商品规格管理
 						controller.Address,      //城市地址管理
 						//这么写是为了避免前后端重复注册相同的路由和方法

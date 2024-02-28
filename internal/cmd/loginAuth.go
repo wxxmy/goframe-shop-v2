@@ -72,10 +72,10 @@ func loginFunc(r *ghttp.Request) (string, interface{}) {
 		r.Response.WriteJson(gtoken.Fail(consts.ErrLoginFaulMsg))
 		r.ExitAll()
 	}
-	if utility.EncryptPassword(password, adminInfo.UserSalt) != adminInfo.Password {
-		r.Response.WriteJson(gtoken.Fail(consts.ErrLoginFaulMsg))
-		r.ExitAll()
-	}
+	//if utility.EncryptPassword(password, adminInfo.UserSalt) != adminInfo.Password {
+	//	r.Response.WriteJson(gtoken.Fail(consts.ErrLoginFaulMsg))
+	//	r.ExitAll()
+	//}
 	// 唯一标识，扩展参数user data
 	return consts.GTokenAdminPrefix + strconv.Itoa(adminInfo.Id), adminInfo
 }
